@@ -7,9 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 Button entermyacc,createmyacc,enterwithoutacc,one;
 CustomDialog customDialog;
+   public static FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +26,19 @@ CustomDialog customDialog;
             entermyacc.setOnClickListener(this);
              one =findViewById(R.id.button9);
             one.setOnClickListener(this);
+    }
+    protected void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            reload();
+        }
+    }
+
+    private void reload() {
+        Intent intent = new Intent(MainActivity.this, SearchSongActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -48,12 +65,5 @@ CustomDialog customDialog;
 
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
 
-         customDialog = new CustomDialog(this);
-        customDialog.show();
-
-    }
 }

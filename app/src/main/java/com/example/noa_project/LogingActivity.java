@@ -17,10 +17,13 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LogingActivity extends AppCompatActivity {
-    private FirebaseAuth mAuth;
+
     Button btnRegister, btnLogin;
     boolean v;
+    private FirebaseAuth mAuth;
     EditText etEmailAddress, etNumberPassword;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,20 +31,7 @@ public class LogingActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            reload();
-        }
-    }
 
-    private void reload() {
-        Intent intent = new Intent(LogingActivity.this, SearchSongActivity.class);
-        startActivity(intent);
-    }
 
      public void onClick(View view) {
 

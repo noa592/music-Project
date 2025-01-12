@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 Button entermyacc,createmyacc,enterwithoutacc,one;
 CustomDialog customDialog;
-   public static FirebaseAuth mAuth;
+   public FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +26,7 @@ CustomDialog customDialog;
             entermyacc.setOnClickListener(this);
              one =findViewById(R.id.button9);
             one.setOnClickListener(this);
+        mAuth = FirebaseAuth.getInstance();
     }
     protected void onStart() {
         super.onStart();

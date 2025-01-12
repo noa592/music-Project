@@ -16,7 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class LogingActivity extends AppCompatActivity {
+public class LogingActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btnRegister, btnLogin;
     boolean v;
@@ -29,15 +29,15 @@ public class LogingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loging);
         mAuth = FirebaseAuth.getInstance();
+        btnLogin = findViewById(R.id.buttonlisten);
+        btnLogin.setOnClickListener(this);
     }
 
 
+    public void onClick(View view) {
 
-     public void onClick(View view) {
 
-
-        if(view == btnLogin)
-        {
+        if (view == btnLogin) {
             String email = etEmailAddress.getText().toString();
             String password = etNumberPassword.getText().toString();
             mAuth.signInWithEmailAndPassword(email, password)

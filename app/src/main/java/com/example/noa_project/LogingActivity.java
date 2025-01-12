@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LogingActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     Button btnRegister, btnLogin;
+    boolean v;
     EditText etEmailAddress, etNumberPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

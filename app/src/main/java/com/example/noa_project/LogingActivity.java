@@ -30,6 +30,8 @@ public class LogingActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_loging);
         mAuth = FirebaseAuth.getInstance();
         btnLogin = findViewById(R.id.buttonlisten);
+        etEmailAddress=findViewById(R.id.editTextTextEmailAddress2);
+        etNumberPassword=findViewById(R.id.editTextTextPassword2);
         btnLogin.setOnClickListener(this);
     }
 

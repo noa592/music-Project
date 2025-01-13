@@ -1,45 +1,50 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+    <!-- AppBarLayout -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-       >
+        android:layout_height="78dp">
 
-        <androidx.viewpager.widget.ViewPager
-            android:id="@+id/viewPager"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tablayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            app:tabMode="scrollable">
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tablayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab2"
+                android:layout_width="wrap_content"
+                android:layout_height="63dp"
+                android:text="account settings "
+                app:layout_anchor="@+id/appbar"
+                app:layout_anchorGravity="center" />
 
-                app:tabMode="scrollable">
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tab1"
+                android:layout_width="92dp"
+                android:layout_height="78dp"
 
-                <com.google.android.material.tabs.TabItem
-                    android:id="@+id/tab1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:text="song list " />
+                android:text="song list "
+                app:layout_anchor="@+id/appbar"
+                app:layout_anchorGravity="center" />
+        </com.google.android.material.tabs.TabLayout>
 
 
-                <com.google.android.material.tabs.TabItem
-                    android:id="@+id/tab2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="account settings " />
-            </com.google.android.material.tabs.TabLayout>
-        </androidx.viewpager.widget.ViewPager>
     </com.google.android.material.appbar.AppBarLayout>
 
+    <!-- תוכן נוסף, לדוגמה ViewPager2 -->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_anchor="@+id/viewPager"
+        app:layout_anchorGravity="center" />
+
+</LinearLayout>

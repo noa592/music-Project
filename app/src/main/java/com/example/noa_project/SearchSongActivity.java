@@ -96,4 +96,12 @@ public class SearchSongActivity extends AppCompatActivity {
                         }
                     });
         }
-    }
+
+        private void AddToPlaylist()
+        {
+
+        }
+
+
+
+}

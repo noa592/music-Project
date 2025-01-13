@@ -14,18 +14,16 @@ public class FragmentAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        switch (position) {
-            case 0:
-                return new BlankFragment();
-            case 1:
-                return new BlankFragment2();
-            default:
-                return new BlankFragment();
+        // החזר פרגמנט שונה לכל טאבל
+        if (position == 0) {
+            return new BlankFragment();  // פרגמנט עבור טאבל 1
+        } else {
+            return new BlankFragment2();  // פרגמנט עבור טאבל 2
         }
     }
 
     @Override
     public int getItemCount() {
-        return 2; // Number of tabs
+        return 2;  // מספר הטאבים
     }
 }

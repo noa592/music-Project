@@ -46,8 +46,8 @@ public class CreateNewAccount extends AppCompatActivity implements View.OnClickL
                                 // Sign in success, update UI with the signed-in user's information
                                 Intent intent = new Intent(CreateNewAccount.this, SearchSongActivity.class);
                                 startActivity(intent);
-
-                            } else {
+                            }
+                             else  {
                                 // If sign in fails, display a message to the user.
                                 Toast.makeText(CreateNewAccount.this, "fail register", Toast.LENGTH_SHORT).show();
                             }

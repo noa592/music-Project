@@ -34,7 +34,7 @@ public class LogingActivity extends AppCompatActivity implements View.OnClickLis
     }
 
 
-    public void onClick(View view) {
+    public void onClick(View view) {//לבקש עזרה מישראל
 
 
         if (view == btnLogin) {
